@@ -459,7 +459,6 @@ func (v *Validate) Struct(current interface{}, errTagName string, baseTagName st
 
 	errs := v.errsPool.Get().(ValidationErrors)
 	sv := reflect.ValueOf(current)
-	fmt.Println(errs)
 	v.tranverseStruct(sv, sv, sv, blank, blank, baseTagName, errTagName, errs, true, false, false, nil, false)
 
 	if len(errs) == 0 {
